@@ -567,7 +567,7 @@ class UIHelper
         }
 
 		let card_image = cardTemplate.cloneNode(true);
-		card_image.src = "../cards/" + card.suit + card.rank + ".png";
+		card_image.src = "cards/" + card.suit + card.rank + ".png";
         card_image.id = "card" + card.suit + card.rank;
 
         if (!playerCard) 
@@ -576,7 +576,7 @@ class UIHelper
 
             if (toElementID == "CPUCards")
             {
-                card_image.src = "../cards/cardBack.png";
+                card_image.src = "cards/cardBack.png";
             }
         }
         else 
@@ -665,7 +665,7 @@ class UIHelper
 
         if (cardToPutOnPileImage.src.endsWith("/cards/cardBack.png"))
         {
-            cardToPutOnPileImage.src = "../cards/" + cardToPutOnPile.suit + cardToPutOnPile.rank + ".png";
+            cardToPutOnPileImage.src = "cards/" + cardToPutOnPile.suit + cardToPutOnPile.rank + ".png";
         }
 
         let cardOnPileImage = document.getElementById("card" + cardInTable.suit + cardInTable.rank);
@@ -698,7 +698,7 @@ class UIHelper
         if (symbolHeart == null)
         {
             symbolHeart = document.createElement('img');
-            symbolHeart.src = "../cards/hearts.png";
+            symbolHeart.src = "cards/hearts.png";
             symbolHeart.id = "symbolHeart";
             symbolHeart.classList.add("symbol");
 
@@ -717,7 +717,7 @@ class UIHelper
         if (symbolSpades == null)
         {
             symbolSpades = document.createElement('img');
-            symbolSpades.src = "../cards/spades.png";
+            symbolSpades.src = "cards/spades.png";
             symbolSpades.id = "symbolSpades";
             symbolSpades.classList.add("symbol");
 
@@ -736,7 +736,7 @@ class UIHelper
         if (symbolClubs == null)
         {
             symbolClubs = document.createElement('img');
-            symbolClubs.src = "../cards/clubs.png";
+            symbolClubs.src = "cards/clubs.png";
             symbolClubs.id = "symbolClubs";
             symbolClubs.classList.add("symbol");
 
@@ -755,7 +755,7 @@ class UIHelper
         if (symbolDiamonds == null)
         {
             symbolDiamonds = document.createElement('img');
-            symbolDiamonds.src = "../cards/diamonds.png";
+            symbolDiamonds.src = "cards/diamonds.png";
             symbolDiamonds.id = "symbolDiamonds";
             symbolDiamonds.classList.add("symbol");
 
