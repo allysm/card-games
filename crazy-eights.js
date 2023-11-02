@@ -263,52 +263,12 @@ async function continueGame(localPlayer, computer, deck, rules, helperUI, discar
     
     if (localPlayer.getNumCardsInHand() == 0) 
     {
-		var C_ach = ['n', 'n', 'n', 'n', 'n'];
-		if (localStorage.getItem("C_localach") === null) {
-			console.log("Local storage for C_ach does not exist");
-			localStorage.setItem("C_localach", JSON.stringify(C_ach));
-		} else {
-			console.log("Local storage for C_ach exists");
-			C_ach = JSON.parse(localStorage.getItem("C_localach"));
-		}
-		C_ach[4] = 'y'; localStorage.setItem("C_localach", JSON.stringify(C_ach)); // ACHIEVEMENT: Win a game
-		
-		var C_score = [0, 0, 0];
-		if (localStorage.getItem("C_localscore") === null) {
-			console.log("Local storage for C_localscore does not exist");
-			localStorage.setItem("C_localscore", JSON.stringify(C_score));
-		} else {
-			console.log("Local storage for C_localscore exists");
-			C_score = JSON.parse(localStorage.getItem("C_localscore"));
-		}
-		sm_inc(C_score, 1); localStorage.setItem("C_localscore", JSON.stringify(C_score)); // SCORE: Games won		
-
         gameStatus = GAME_STATUS.WON;
         labelMsg.innerHTML = "Player wins - they were able to get rid of their cards first!";
         //helperUI.resetGame();
     }
     else if (computer.getNumCardsInHand() == 0) 
     {
-		var C_ach = ['n', 'n', 'n', 'n', 'n'];
-		if (localStorage.getItem("C_localach") === null) {
-			console.log("Local storage for C_ach does not exist");
-			localStorage.setItem("C_localach", JSON.stringify(C_ach));
-		} else {
-			console.log("Local storage for C_ach exists");
-			C_ach = JSON.parse(localStorage.getItem("C_localach"));
-		}
-		C_ach[3] = 'y'; localStorage.setItem("C_localach", JSON.stringify(C_ach)); // ACHIEVEMENT: Lose a game    
-
-		var C_score = [0, 0, 0];
-		if (localStorage.getItem("C_localscore") === null) {
-			console.log("Local storage for C_localscore does not exist");
-			localStorage.setItem("C_localscore", JSON.stringify(C_score));
-		} else {
-			console.log("Local storage for C_localscore exists");
-			C_score = JSON.parse(localStorage.getItem("C_localscore"));
-		}
-		sm_inc(C_score, 1); localStorage.setItem("C_localscore", JSON.stringify(C_score)); // SCORE: Games lost		
-		
 		gameStatus = GAME_STATUS.LOST;
         labelMsg.innerHTML = "Computer wins - they were able to get rid of their cards first!";
         //helperUI.resetGame();
@@ -438,16 +398,6 @@ function playCard(cardChoice, helperUI, discardedCards, currentPlayer)
             }
             else
             {
-				var C_ach = ['n', 'n', 'n', 'n', 'n'];
-				if (localStorage.getItem("C_localach") === null) {
-					console.log("Local storage for C_ach does not exist");
-					localStorage.setItem("C_localach", JSON.stringify(C_ach));
-				} else {
-					console.log("Local storage for C_ach exists");
-					C_ach = JSON.parse(localStorage.getItem("C_localach"));
-				}
-				C_ach[2] = 'y'; localStorage.setItem("C_localach", JSON.stringify(C_ach)); // ACHIEVEMENT: Change the suit
-
                 waitForSelectedSuit(helperUI, currentPlayer);
             }
         }
